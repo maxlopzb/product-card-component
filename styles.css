@@ -1,115 +1,149 @@
 @import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@400;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,700&display=swap');
 
-body {
-    background: hsl(30, 38%, 92%);
-    font-size: 14px;
-    color: hsl(228, 12%, 48%);
-    font-family: 'Sofia Sans', sans-serif;
-}
-
-main {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   height: 100vh;
-}
-
-#bg-image {
-    width: 350px;
-    height: 520px;
-    background-image: url("images/image-product-desktop.jpg");
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px 0 0 10px;
-}
-
-section {
-    width: 350px;
-    height: 520px;
+* {
     box-sizing: border-box;
-    padding: 30px 50px 20px 50px;
-    background: white;
-    border-radius: 0 10px 10px 0;
+    margin: 0;
+    padding: 0;
 }
 
-#sup-title {
-    margin: 0 0 15px 0;
-    font-size: 1.2em;
-    font-family: 'Sofia Sans', sans-serif;
-    letter-spacing: 6px;
-}
-
-#main-title {
-    margin: 0 0 30px 0;
-    font-family: 'Fraunces', serif;
-    font-size: 2.5em;
-    line-height: 1;
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-family: "Sofia Sans", sans-serif;
+    background: hsl(30, 38%, 92%);
     color: hsl(212, 21%, 14%);
 }
 
-#desc {
-    font-size: 1.2em;
-    line-height: 1.5;
-    margin-bottom: 30px;
+main {
+    display: flex;
+    margin: 10px;
 }
 
-#prices {
+.info-section {
+    max-width: 340px;
+    padding: 35px;
+    background-color: white;
+    border-radius: 0 10px 10px 0;
+}
+
+picture img{
+    max-width: 333px;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+}
+
+.mayus {
+    text-transform: uppercase;
+}
+
+.up-title {
+    letter-spacing: 6px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color:  hsl(228, 12%, 48%);
+}
+
+.info-text {
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    letter-spacing: 0.5px;
+    color:  hsl(228, 12%, 48%);
+}
+
+p {
+    line-height: 1.5;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-family: 'Fraunces', serif;
+    font-size: 2.6em;
+}
+
+.visually-hidden {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    margin: -1px;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
+
+.prices {
     display: flex;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
-#new-price {
-    color: hsl(158, 36%, 37%);
+.prices p {
     font-family: 'Fraunces', serif;
     font-size: 2.5em;
+    color: hsl(158, 36%, 37%);
     margin-right: 20px;
 }
 
-#old-price {
-    text-decoration: line-through;
+.prices s {
+    color:  hsl(228, 12%, 48%);
 }
 
-#btn {
+button {
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 100%;
-    color: white;
-    background-color: hsl(158, 36%, 37%);
     padding: 15px 0;
+    background-color:hsl(158, 36%, 37%);
+    color: white;
     border: none;
     border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
 }
 
-#btn img {
-    margin-right: 10px;
+button:hover {
+    background-color: hsl(158, 21%, 31%);
 }
 
-#btn:active {
-    background-color: hsl(159, 21%, 34%);
+button:active {
+    background-color: hsl(158, 21%, 31%);
 }
 
-@media  (max-width: 500px) {
+button img {
+    margin-right: 10px;;
+}
+
+@media (max-width: 680px) {
     main {
         flex-direction: column;
-        height: 100vh;
-        margin: 20px;
-        flex-direction: center;
-     }
-     #bg-image {
-        background-image: url("images/image-product-desktop.jpg");
+    }
+
+    .info-section {
+        border-radius: 0 0 10px 10px;
+        max-width: 400px;
+    }
+
+    picture img {
+        max-width: 400px;
         border-radius: 10px 10px 0 0;
     }
-    section {
-        box-sizing: border-box;
-        background: white;
-        border-radius: 0 0 10px 10px;
+
+@media (max-width: 420px) {
+
+    .info-section {
+        max-width: 300px;
+    }
+
+    picture img {
+        max-width: 300px;
     }
 }
-
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+}
