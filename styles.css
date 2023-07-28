@@ -1,149 +1,138 @@
-@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@400;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap');
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+:root {
+    --main-font-family: 'Montserrat', sans-serif;
+    --secondary-font-family: 'Fraunces', serif;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
+html, body {
+    margin: 0;
     height: 100vh;
+    background-color: hsl(30, 38%, 92%);
+}
+
+.card-component {
+    display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 14px;
-    font-family: "Sofia Sans", sans-serif;
-    background: hsl(30, 38%, 92%);
-    color: hsl(212, 21%, 14%);
+    height: 100vh;
+    margin: 28px 16px;
 }
 
-main {
-    display: flex;
-    margin: 10px;
+.card-component-img  {
+    height: 460px;
 }
 
-.info-section {
-    max-width: 340px;
-    padding: 35px;
-    background-color: white;
-    border-radius: 0 10px 10px 0;
-}
-
-picture img{
-    max-width: 333px;
+.card-component-img img {
+    max-width: 300px;
+    width: 100%;
     height: 100%;
     border-radius: 10px 0 0 10px;
 }
 
-.mayus {
+.card-component-info {
+    padding: 32px;
+    max-width: 300px;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 0 10px 10px 0;
+}
+
+.card-component-info h3 {
+    color: #6C7289;
+    font-family: var(--main-font-family);
+    font-size: 12px;
+    font-weight: 500;
     text-transform: uppercase;
-}
-
-.up-title {
-    letter-spacing: 6px;
+    letter-spacing: 5px;
     margin-top: 0;
-    margin-bottom: 15px;
-    color:  hsl(228, 12%, 48%);
 }
 
-.info-text {
-    margin-bottom: 20px;
-    font-size: 1.3em;
-    letter-spacing: 0.5px;
-    color:  hsl(228, 12%, 48%);
+.card-component-info h1 {
+    font-family: var(--secondary-font-family);
+    line-height: 32px;
+    margin-bottom: 24px;
 }
 
-p {
-    line-height: 1.5;
+.card-component-info .product-info {
+    color: #6C7289;
+    font-family: var(--main-font-family);
+    font-size: 14px;
+    line-height: 23px;
+    margin-bottom: 29px;
 }
 
-h1 {
-    margin-bottom: 20px;
-    font-family: 'Fraunces', serif;
-    font-size: 2.6em;
-}
-
-.visually-hidden {
-    border: 0;
-    clip: rect(1px, 1px, 1px, 1px);
-    -webkit-clip-path: inset(50%);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    margin: -1px;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-    white-space: nowrap;
-}
-
-.prices {
+.card-component-info .price-info p{
     display: flex;
     align-items: center;
-    margin-bottom: 25px;
+    color: #3D8168;
+    font-family: var(--secondary-font-family);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 32px;
+    margin-bottom: 30px;
 }
 
-.prices p {
-    font-family: 'Fraunces', serif;
-    font-size: 2.5em;
-    color: hsl(158, 36%, 37%);
-    margin-right: 20px;
-}
-
-.prices s {
-    color:  hsl(228, 12%, 48%);
+.card-component-info .price-info span{
+    color: #6C7289;
+    font-family: var(--main-font-family);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 23px;
+    text-decoration-line: line-through;
+    padding-left: 19px;
+    vertical-align: center;
 }
 
 button {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 15px 0;
-    background-color:hsl(158, 36%, 37%);
+    display: block;
     color: white;
+    font-family: var(--main-font-family);
+    font-size: 14px;
+    font-weight: 700;
+    width: 236px;
+    margin: 0 auto;
+    padding: 16px 32px;
     border: none;
-    border-radius: 10px;
-    font-weight: bold;
+    border-radius: 8px;
+    background-color: #3D8168;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: hsl(158, 21%, 31%);
-}
-
 button:active {
-    background-color: hsl(158, 21%, 31%);
+    background-color: #1A4032;
 }
 
 button img {
-    margin-right: 10px;;
+    margin-right: 10px;
 }
 
-@media (max-width: 680px) {
-    main {
+.mobile-img {
+    display: none;
+}
+
+@media (max-width: 605px) {
+    .card-component {
         flex-direction: column;
     }
-
-    .info-section {
-        border-radius: 0 0 10px 10px;
-        max-width: 400px;
+    .desktop-img {
+        display: none;
     }
-
-    picture img {
-        max-width: 400px;
+    .mobile-img {
+        display: block;
+    }
+    .card-component-img {
+        height: auto;
+    }
+    .card-component-img img{
         border-radius: 10px 10px 0 0;
+        max-width: none;
+        width: 343px;
     }
-
-@media (max-width: 420px) {
-
-    .info-section {
-        max-width: 300px;
+    .card-component-info {
+        border-radius: 0 0 10px 10px;
+        max-width: none;
+        width: 343px;
     }
-
-    picture img {
-        max-width: 300px;
-    }
-}
 }
